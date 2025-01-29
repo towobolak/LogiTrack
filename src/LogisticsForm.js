@@ -52,7 +52,7 @@ const LogisticsForm = () => {
     setIsSubmitting(true);
 
     try {
-      // Save query
+      // To save query
       const saveResponse = await fetch('/api/save-query', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -64,7 +64,7 @@ const LogisticsForm = () => {
 
       if (!saveResponse.ok) throw new Error('Failed to save query');
 
-      // Send confirmation
+      // To send confirmation
       const emailResponse = await fetch('/api/send-confirmation', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -78,7 +78,7 @@ const LogisticsForm = () => {
         description: 'Form submitted successfully. You will receive a confirmation email shortly.'
       });
 
-      // Reset form
+      // To reset form
       setFormData({
         senderName: '',
         receiverName: '',
