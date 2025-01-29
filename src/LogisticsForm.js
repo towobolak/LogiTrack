@@ -8,13 +8,13 @@ import { toast } from './components/ui/toast';
 const LogisticsForm = () => {
   const [formData, setFormData] = useState({
     senderName: '',
-    receiverName: '',
     senderAddress: '',
-    receiverAddress: '',
-    senderMobile: '',
-    receiverMobile: '',
     senderEmail: '',
+    senderMobile: '',
+    receiverName: '',
+    receiverAddress: '',
     receiverEmail: '',
+    receiverMobile: '',
     estimatedFee: '',
   });
 
@@ -81,13 +81,13 @@ const LogisticsForm = () => {
       // To reset form
       setFormData({
         senderName: '',
-        receiverName: '',
         senderAddress: '',
-        receiverAddress: '',
-        senderMobile: '',
-        receiverMobile: '',
         senderEmail: '',
+        senderMobile: '',
+        receiverName: '',
+        receiverAddress: '',
         receiverEmail: '',
+        receiverMobile: '',
         estimatedFee: '',
       });
 
@@ -121,22 +121,46 @@ const LogisticsForm = () => {
           </div>
 
           <div className="mb-2">
-            <label htmlFor="receiverName" className="block mb-1">Receiver's Full Name</label>
+            <label htmlFor="senderAddress" className="block mb-1">Sender's Address</label>
+            <Textarea
+              id="senderAddress"
+              name="senderAddress"
+              value={formData.senderAddress}
+              onChange={handleChange}
+              required
+            />
+          </div> 
+
+          <div className="mb-2">
+            <label htmlFor="senderMobile" className="block mb-1">Sender's Mobile Number</label>
             <Input
-              id="receiverName"
-              name="receiverName"
-              value={formData.receiverName}
+              id="senderMobile"
+              name="senderMobile"
+              type="tel"
+              value={formData.senderMobile}
+              onChange={handleChange}
+              required
+            />
+          </div> 
+
+          <div className="mb-2">
+            <label htmlFor="senderEmail" className="block mb-1">Sender's Email</label>
+            <Input
+              id="senderEmail"
+              name="senderEmail"
+              type="email"
+              value={formData.senderEmail}
               onChange={handleChange}
               required
             />
           </div>
 
           <div className="mb-2">
-            <label htmlFor="senderAddress" className="block mb-1">Sender's Address</label>
-            <Textarea
-              id="senderAddress"
-              name="senderAddress"
-              value={formData.senderAddress}
+            <label htmlFor="receiverName" className="block mb-1">Receiver's Full Name</label>
+            <Input
+              id="receiverName"
+              name="receiverName"
+              value={formData.receiverName}
               onChange={handleChange}
               required
             />
@@ -154,36 +178,12 @@ const LogisticsForm = () => {
           </div>
 
           <div className="mb-2">
-            <label htmlFor="senderMobile" className="block mb-1">Sender's Mobile Number</label>
-            <Input
-              id="senderMobile"
-              name="senderMobile"
-              type="tel"
-              value={formData.senderMobile}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <div className="mb-2">
             <label htmlFor="receiverMobile" className="block mb-1">Receiver's Mobile Number</label>
             <Input
               id="receiverMobile"
               name="receiverMobile"
               type="tel"
               value={formData.receiverMobile}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <div className="mb-2">
-            <label htmlFor="senderEmail" className="block mb-1">Sender's Email</label>
-            <Input
-              id="senderEmail"
-              name="senderEmail"
-              type="email"
-              value={formData.senderEmail}
               onChange={handleChange}
               required
             />
