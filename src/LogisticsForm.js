@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './LogisticsForm.css';
 import { Card, CardContent } from './components/ui/card';
 import { Button } from './components/ui/button';
 import { Input } from './components/ui/input';
@@ -107,7 +108,10 @@ const LogisticsForm = () => {
     <Card>
       <CardContent>
         <form onSubmit={handleSubmit}>
-          <h1 className="text-xl font-bold mb-4">Logistics Form</h1>
+          <div className='header'>
+          <h1 className="text-xl font-bold mb-4">Msx Logistics</h1>
+          <p>Please fill out the form below completely to calculate your delivery estimate.</p>
+          </div>
 
           <div className="mb-2">
             <label htmlFor="senderName" className="block mb-1">Sender's Full Name</label>
